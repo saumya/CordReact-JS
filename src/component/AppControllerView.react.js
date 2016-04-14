@@ -15,6 +15,10 @@ var AppControllerView = React.createClass({
     router: React.PropTypes.object.isRequired,
   },
   render:function(){
+    var displayAlert = function(){
+      alert('Cordova !');
+    };
+    document.addEventListener("deviceready", displayAlert, false);
     return(
       <div>
         AppControllerView
