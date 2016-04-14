@@ -4,7 +4,7 @@
   "description": "A cordova application using cordova+wordpress+react",
   "main": "app.js",
   "scripts": {
-    "2js": "babel --presets react,es2015 js --out-dir buildReact",
+    "2js": "babel --presets react,es2015 src --out-dir buildReact",
     "pack": "webpack buildReact/app.js build/bundle.js"
   },
   "repository": {

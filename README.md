@@ -8,3 +8,8 @@ React 15.0.1 is not supported by
  - react-tap-event-plugin ( 0.2.2 )
 
 React 0.14.0 is required to use both material-ui & react-tap-event-plugin.
+
+
+### Running Project
+ `npm run 2js`
+ `npm run pack`
