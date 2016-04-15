@@ -28,6 +28,9 @@ var AppControllerView = React.createClass({
   },
 
   render:function(){
+    // Two ways to go about after checking the onDeviceReady event.
+    // 1. First is as we are doing here. Just move to a different route on the event
+    // 2. Second is adding a if-else and either return a default view or the application as per the event
     return(
       <div>
         <nav className="u-full-width">
@@ -50,7 +53,6 @@ var AppControllerView = React.createClass({
   onDeviceReady: function(){
     //alert('AppControllerView : Device Ready!');
     this.setState({isDeviceReady:'YEP'});
-    //
     this.context.router.push('/home');
   },
 

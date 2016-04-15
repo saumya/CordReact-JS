@@ -4,6 +4,7 @@ var BootControllerView = React.createClass({
     return(
       <div>
         BootControllerView
+        <div>Cordova: onDeviceReady event is not yet happened !</div>
       </div>
     );
   }
