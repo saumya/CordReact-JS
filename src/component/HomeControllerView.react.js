@@ -1,5 +1,8 @@
 var React = require('react');
 var HomeControllerView = React.createClass({
+  getInitialState: function(){
+    return ({manufacturer:'NOT FOUND YET!'});
+  },
   componentWillMount: function(){
     var that = this;
     document.addEventListener("deviceready", that.displayAlert, false);
@@ -11,9 +14,12 @@ var HomeControllerView = React.createClass({
     document.removeEventListener("pause", that.onPause, false);
   },
   render:function(){
+    var that = this;
+    var s = device.manufacturer;
     return(
       <div>
         HomeControllerView
+        <div>Device manufacturer is {that.state.manufacturer}</div>
       </div>
     );
   },
@@ -21,6 +27,7 @@ var HomeControllerView = React.createClass({
     var s = device.manufacturer;
     alert('Cordova ! device.manufacturer='+s);
     //that.context.router.push('/see');
+    this.setState({manufacturer:s});
   },
   onPause:function(){
     //('AppControllerView:onPause !');
