@@ -17,13 +17,15 @@
   // var browserHistory = require('react-router').browserHistory;
   //
   var AppControllerView = require('./component/AppControllerView.react');
+  var BootControllerView = require('./component/BootControllerView.react');
   var HomeControllerView = require('./component/HomeControllerView.react');
   var SeeAllControllerView = require('./component/SeeAllControllerView.react');
   var AddNewControllerView = require('./component/AddNewControllerView.react');
   //
   var routes = (
                 <Route path="/" component={AppControllerView}>
-                  <IndexRoute component={HomeControllerView} />
+                  <IndexRoute component={BootControllerView} />
+                  <Route path="home" component={HomeControllerView} />
                   <Route path="see" component={SeeAllControllerView} />
                   <Route path="add" component={AddNewControllerView} />
                 </Route>

@@ -10,6 +10,7 @@ var HomeControllerView = React.createClass({
     //
   },
   render:function(){
+    // that.context.router.push('/see');
     return(
       <div>
         HomeControllerView
