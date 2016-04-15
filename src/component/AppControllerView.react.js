@@ -15,10 +15,19 @@ var AppControllerView = React.createClass({
     router: React.PropTypes.object.isRequired,
   },
   render:function(){
+    var that = this;
+    var message = 'Nothing';
     var displayAlert = function(){
       alert('Cordova !');
+      //that.context.router.push('/see');
+    };
+    var onPause = function(){
+      //('AppControllerView:onPause !');
+      alert('pause');
+      console.log('AppControllerView:onPause');
     };
     document.addEventListener("deviceready", displayAlert, false);
+    document.addEventListener("pause", onPause, false);
     return(
       <div>
         AppControllerView

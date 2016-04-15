@@ -3,6 +3,7 @@
 ##### Node
 node_modules/
 ##### Application
+index.html
 build/
 buildReact/
 #####
