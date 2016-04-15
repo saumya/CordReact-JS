@@ -31,6 +31,10 @@ var AppControllerView = React.createClass({
     return(
       <div>
         AppControllerView
+        {
+          //renders the children
+          this.props.children
+        }
       </div>
     );
   }
