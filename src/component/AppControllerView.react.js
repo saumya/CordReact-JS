@@ -14,14 +14,28 @@ var AppControllerView = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired,
   },
-  render:function(){
+
+  getInitialState: function(){
+    return ({isDeviceReady:'NOPE'});
+  },
+  componentWillMount: function(){
     var that = this;
+    document.addEventListener("deviceready", that.onDeviceReady, false);
+  },
+  componentWillUnmount: function(){
+    var that = this;
+    document.removeEventListener("deviceready", that.onDeviceReady, false);
+  },
 
-
+  render:function(){
+    //alert('render')
+    var that = this;
+    var s = this.state.isDeviceReady;
+    alert('this.state.isDeviceReady='+this.state.isDeviceReady);
     return(
       <div>
         <nav className="u-full-width">
-          <h2>The Required.</h2>
+          <h2>The Required.{this.state.isDeviceReady}</h2>
           <ul id="navlist">
             <li><Link to='/see' className="button button-red"> See All </Link></li>
             <li><Link to='/add' className="button button-red"> Add New </Link></li>
@@ -34,6 +48,12 @@ var AppControllerView = React.createClass({
         }
       </div>
     );
-  }
+  },
+
+  onDeviceReady: function(){
+    //alert('AppControllerView : Device Ready!');
+    this.setState({isDeviceReady:'YEP'});
+  },
+
 });
 module.exports = AppControllerView;
