@@ -20,22 +20,22 @@ var AppControllerView = React.createClass({
   },
   componentWillMount: function(){
     var that = this;
-    document.addEventListener("deviceready", that.onDeviceReady, false);
+    //document.addEventListener("deviceready", that.onDeviceReady, false);
   },
   componentWillUnmount: function(){
     var that = this;
-    document.removeEventListener("deviceready", that.onDeviceReady, false);
+    //document.removeEventListener("deviceready", that.onDeviceReady, false);
   },
 
   render:function(){
     //alert('render')
-    var that = this;
-    var s = this.state.isDeviceReady;
-    alert('this.state.isDeviceReady='+this.state.isDeviceReady);
+    //var that = this;
+    //var s = this.state.isDeviceReady;
+    //alert('AppControllerView:this.state.isDeviceReady='+s);
     return(
       <div>
         <nav className="u-full-width">
-          <h2>The Required.{this.state.isDeviceReady}</h2>
+          <h2>The Required.</h2>
           <ul id="navlist">
             <li><Link to='/see' className="button button-red"> See All </Link></li>
             <li><Link to='/add' className="button button-red"> Add New </Link></li>

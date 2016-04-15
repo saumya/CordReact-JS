@@ -30,4 +30,7 @@
               );
   //
   var App = ReactDOM.render(<Router routes={routes} history={hashHistory} />,document.getElementById('react-app'));
+  //
+
+
 })();
