@@ -28,26 +28,31 @@ var AppControllerView = React.createClass({
   },
 
   render:function(){
-    //alert('render')
-    //var that = this;
-    //var s = this.state.isDeviceReady;
-    //alert('AppControllerView:this.state.isDeviceReady='+s);
-    return(
-      <div>
-        <nav className="u-full-width">
-          <h2>Device Ready? { this.state.isDeviceReady }.</h2>
-          <ul id="navlist">
-            <li><Link to='/see' className="button button-red"> See All </Link></li>
-            <li><Link to='/add' className="button button-red"> Add New </Link></li>
-            <li><IndexLink to="/">Home</IndexLink></li>
-          </ul>
-        </nav>
-        {
-          //renders the children
-          this.props.children
-        }
-      </div>
-    );
+    alert('render:'+this.state.isDeviceReady);
+    // Checks for onDeviceReady event and then only renders the actual application
+    if(this.state.isDeviceReady==='YEP'){
+      return(
+        <div>
+          <nav className="u-full-width">
+            <h2>Device Ready? { this.state.isDeviceReady }.</h2>
+            <ul id="navlist">
+              <li><Link to='/see' className="button button-red"> See All </Link></li>
+              <li><Link to='/add' className="button button-red"> Add New </Link></li>
+              <li><IndexLink to="/">Home</IndexLink></li>
+            </ul>
+          </nav>
+          {
+            //renders the children
+            this.props.children
+          }
+        </div>
+      );
+    }else{
+      return(
+        <div>Device is getting ready.</div>
+      );
+    }
+
   },
 
   onDeviceReady: function(){

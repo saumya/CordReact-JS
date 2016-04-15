@@ -13,7 +13,9 @@ var HomeControllerView = React.createClass({
     return(
       <div>
         HomeControllerView
-        <div>Device manufacturer is {this.state.manufacturer}</div>
+        <div>We can call all the Cordova APIs as the application starts only after the deviceReady event check.</div>
+        <div>Device manufacturer is {device.manufacturer}</div>
+        <div>Device model is {device.model}</div>
       </div>
     );
   },
